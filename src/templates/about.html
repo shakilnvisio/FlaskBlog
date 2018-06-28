@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {# Setting up a title. If title variable is null then it will
+    write 'Flask Blog' which basically the 'else' statement. If the title has values
+    then it will execute 'if' statement #}
+    {% if title %}
+    <title>Flask Blog - {{ title }}</title>
+    {% else%}
+    <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <h1>About Page</h1>
+</body>
+</html>

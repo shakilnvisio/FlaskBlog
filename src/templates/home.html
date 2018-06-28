@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {# Setting up a title. If title variable is null then it will
+    write 'Flask Blog' which basically the 'else' statement. If the title has values
+    then it will execute 'if' statement #}
+
+    {% if title %}
+    <title>Flask Blog - {{ title }}</title>
+    {% else%}
+    <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+{# This is used for commenting. The html comment tag does not work here #}
+  {#
+  To write code in the html, you need a code block-->
+    {% %} -> this is the code block
+      starting a loop to get the post
+      to print out the variable you need '{{get variable value}}'
+  #}
+
+    {% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p> By {{ post.author }} on {{ post.date_posted }}</p>
+    <p>{{ post.content }}</p>
+    {% endfor %} {# ending of the for loop #}
+
+
+    {# NOTE: Now look, in the title block of home.html and about.html,
+        we have similar code and if we want to change the default title
+        we would have to do it in every page. To prevent that we can do something different.
+        In 'homeminified.html' and 'aboutminified.html' I have shown how to do that#}
+
+    {# NOTE: in 'homeboot.html' I have used bootstrap framework #}
+
+</body>
+</html>

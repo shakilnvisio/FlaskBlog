@@ -1,0 +1,13 @@
+{% extends "layout.html " %} {# inhereting the "layout.html" page#}
+
+{# content block that we are going to change#}
+
+{% block content %}
+{% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p> By {{ post.author }} on {{ post.date_posted }}</p>
+    <p>{{ post.content }}</p>
+    {% endfor %} {# ending of the for loop #}
+{% endblock content %} {# here in the end block the 'content' word is optional and
+                        it is changable. Here I am using it so that I can keep track of
+                        which block we are ending if there are more than one block content #}

@@ -1,0 +1,20 @@
+{% extends "layoutbootstrap.html " %} {# inhereting the "layout.html" page#}
+
+{# content block that we are going to change#}
+
+{% block content %}
+{% for post in posts %}
+    <article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+  </div>
+</article>
+    {% endfor %} {# ending of the for loop #}
+{% endblock content %} {# here in the end block the 'content' word is optional and
+                        it is changable. Here I am using it so that I can keep track of
+                        which block we are ending if there are more than one block content #}
